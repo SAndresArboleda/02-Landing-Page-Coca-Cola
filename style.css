@@ -1,0 +1,514 @@
+/*
+Algo extraño que pas+o: en el cuadro de enviar no le cerré la etiqueta textarea y me salia en el cuadro de Mensaje, parte del codigo que yo tengo y parece que el de google map.
+Clase 1: https://youtu.be/nEz72MTmDi4 
+Clase 2: https://youtu.be/27sYoeANkZo
+	. Descargamos de google map para colocar mapa, pero si llega a un numero de ingresos piden cobrar cuota mensual
+Clase 3 (estilos I): https://youtu.be/io375WGzVqE
+	. Descargamos normalize.css, para darle normalidad al html en estilos
+	. Descargamos google fonts, es para descargar tipos de fuentes
+	. font Awesome usuario mio: <script src="https://kit.fontawesome.com/2413f55fe9.js" crossorigin="anonymous"></script>
+	Los ponemos debajo de los <link/>
+Clase 4 (Estilos II): https://youtu.be/iRbO8pMG8q8
+Clase 5 (Estilos III): https://youtu.be/hYPova6Fcu8
+Clase 6 Funciones: https://youtu.be/DJ08SA6Gdk8
+
+
+Investigar sobre la grilla de 12 columnas
+tinypng
+https://pagespeed.web.dev/
+https://chromewebstore.google.com/detail/pagespeed-insights-mv3/lanlbpjbalfkflkhegagflkgcfklnbnh
+lottie
+https://lottiefiles.com/es/
+
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 13px;
+	color: black;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+p {
+	color: black;
+}
+
+header {
+	padding: 15px 0;
+	position: fixed;
+	/*La position fixed solo sirve con top, bottom, left, right, z-index. Es para que no se mueva el contenido la barra de navegacion  */
+	top: 0;
+	/*El menu siempre arriba*/
+	left: 0;
+	z-index: 2;
+	/*Esto hace que la barra de nav quede sobre la foto, venga al frente*/
+	background-color: white;
+	width: 100%;
+}
+
+header .container {
+	/*display: block;*/
+	/*Cambiar comportamiento elemento*/
+	/*display: inline-block;*/
+	/*se colocan los elementos al lado del otro respentando el alto que tenga el elemento*/
+	/*display: inline;*/
+	/*Coloca el elemento al lado del otro*/
+	display: flex;
+	/*Aprobecha el espacio que tenga para acomodar a sus hijos*/
+	justify-content: space-between;
+	/*Alinea los elementos en base al eje X. Between: reparte uniformemente*/
+	align-items: center;
+}
+
+header .container .logo {
+	width: 100px;
+	margin-left: 5px;
+}
+
+
+header .container nav a {
+	color: red;
+	text-decoration: none;
+	margin: 0 15px;
+}
+header .container .hamb
+{
+	display: none;
+	position: relative;
+}
+
+
+footer
+{
+	background-color: black;
+	color: white;
+	padding-top: 60px;
+}
+.columna-25{
+	width: 25%;
+}
+footer .barra-footer
+{
+	background-color: grey;
+	text-align: center;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer .logo-footer
+{
+	width: 100%;
+}
+
+footer ul
+{
+	padding-left: 0;
+	list-style: none;
+}
+
+footer ul li
+{
+	margin-bottom: 10px;
+}
+
+footer p
+{
+	color: white;
+	margin-bottom: 30px;
+}
+
+footer a
+{
+	color: white;
+}
+
+footer .redes
+{
+	font-size: 30px;
+	display: flex;
+}
+
+footer .redes a
+{
+	margin: 0 7.5px;
+}
+
+.boton {
+	text-align: center;
+	text-decoration: none;
+	padding: 15px 20px;
+	border: none;
+}
+
+.boton.boton-rojo {
+	background-color: red;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#servicios .container {
+	width: 1140px;
+	margin: 0 auto 0 auto;
+	/*arriba(top) y abajo(button) 0, izq y der auto*/
+	/* padding: 0 15px; */
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+}
+
+#inicio {
+	position: relative;
+	/*La position relative solo sirve con top, bottom, left, right, z-index. Es para mover su contenido pero el espacio donde estaba permanece  */
+	/*position: absolute;*/
+	/*La position absolute solo sirve con top, bottom, left, right, z-index Es para mover su contenido pero el espacio donde estaba desaparece colocar texto sobre una imagen*/
+}
+
+#inicio img {
+	width: 100%;
+	display: block;
+}
+
+#inicio .bloque-inicio {
+	position: absolute;
+	/*colocar el texto sobre la imagen pero el contenedor que los contiene debe tambien tener position absolute o relative*/
+	top: 40%;
+	left: 50%;
+	width: 800px;
+	align-items: center;
+	text-align: center;
+	margin-left: -400px;
+}
+
+#inicio .bloque-inicio h1 {
+	color: white;
+	font-size: 35px;
+}
+
+#inicio .bloque-inicio p {
+	color: white;
+	font-size: 16px;
+}
+
+/*segundo video estilos II*/
+.seccion {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+#nosotros {
+	background-image: url("img/latas.jpg");
+	background-size: cover;
+	/*Aprobechar el tamaño del fondo y cubrir todo el tamaño que tenga*/
+	text-align: center;
+}
+
+#nosotros p {
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	/*margin: 0;*/
+	/*La etiqueta p traen un margen por defecto, se lo quitamos*/
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	/*Si una de las columnas no entra en la linea se va hacia abajo*/
+	margin-left: -15px;
+	/*para que la imagen de servicio 1 quede alineada con el logo del nav*/
+	margin-right: -15px;
+	/*para que la imagen de servicio 1 quede alineada con el logo del nav*/
+}
+
+.columna {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.columna-33 {
+	width: 33.33%;
+}
+
+#servicios .bloque-servicio {
+	border: 1px solid gray;
+	height: 407px;
+	
+}
+#servicios .bloque-servicio a{
+	/* background-color: aqua; */
+	display: block;
+
+}
+
+#servicios .bloque-servicio .bloque-img-servicio img {
+	width: 100%;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio {
+	padding: 15px;
+	height: 209px;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio h3 {
+	margin: 0;
+	font-size: 25px;
+}
+
+.boton.boton-blanco {
+	background-color: white;
+	color: red;
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid red;
+}
+
+/*PARA QUE CUALQUIER IMAGEN OCUPE EL ESPACIO DADO*/
+.cuadrado-perfecto {
+	width: 100%;
+	/*height: 100%;*/
+	/*No se puede poner un height porque el que contiene a el cuadrado perfecto no tiene altura definida, crearemos un alto con padding-bottom*/
+	padding-bottom: 100%;
+	position: relative;
+}
+
+.cuadrado-perfecto img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/*para cubrir todo el espacio con la imagen*/
+	object-position: center;
+	position: absolute;
+	/*Para que la imagen quede dentro del cuadrado perfecto, este tambien debe tener position relative*/
+	top: 0;
+	left: 0;
+}
+
+/*Para que no quede tan cuadrada la foto hacemos lo siguiente*/
+#servicios .bloque-servicio .bloque-img-servicio.cuadrado-perfecto {
+	padding-bottom: 56.25%;
+	/*Este valor corresponde a la relacion de la pantalla 16:9*/
+}
+
+.container-fluid {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+}
+
+#galeria h4 {
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	color: white;
+	font-size: 18px;
+	width: 100%;
+}
+#galeria img {
+	filter: grayscale(1);
+}
+#galeria .cuadrado-perfecto:hover img{
+	filter: grayscale(0);
+}
+#galeria .cuadrado-perfecto:hover h4{
+	display: none;
+}
+
+#contactenos{
+	position: relative;
+}
+#contactenos iframe{
+	position: absolute;  /* como con position absolute se sobrepone el map sobre el formulario, entonces colocamos los contenedores con position: relative*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* filter: grayscale(1); */
+}
+
+.columna-50{
+	width: 50%;
+}
+.empujar-50{
+	margin-left: 50%;
+}
+.empujar-0{
+	margin-left: 0;
+}
+#contactenos form{
+	padding: 60px;
+	background-color: red;
+}
+#contactenos form .form-block{
+	width: 100%;
+	margin-bottom: 15px;
+}
+#contactenos form .form-block .form-control{
+	display: block;
+	height: 40px;
+	font-size: 16px;
+	border: 1px solid gray;
+	width: 100%;
+	padding: 5px 10px;
+}
+#contactenos form .form-block textarea{
+	display: block;
+	height: 100px;
+	font-size: 16px;
+	border: 1px solid gray;
+	width: 100%;
+	padding: 5px 10px;
+}
+
+.columna-41{
+	width: 41.66%; /*Para correr el cuadro del nombre y email para la derecha*/
+}
+.empujar-58{
+	margin-left: 58.33%; /*Para correr el cuadro del nombre y email para la derecha*/
+}
+.empujar-66{
+	margin-left: 66.66;
+}
+
+#contactenos form .form-block.bloque-ultimo{
+	margin-bottom: 0;
+}
+.boton.boton-negro {
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+.boton.boton-negro:hover {
+	background-color: white;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@media(max-width: 767px)
+{
+	body
+	{
+		font-size: 15px;
+	}
+
+	header .container nav 
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		padding-right: 15px;
+		padding-left: 15px;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		transition: all 0.4s ease;
+		transform: translateX(100%);
+	}
+
+	header .container nav.open 
+	{
+		transform: translateX(0);
+	}
+
+	header .container nav a
+	{
+		font-size: 30px;
+		margin: 15px 0;
+	}
+
+	header .container .hamb
+	{
+		display: block;
+		font-size: 40px;
+		color: red;
+
+	}
+
+	form .boton.boton-negro
+	{
+		width: 100%;
+	}
+
+	footer
+	{
+		text-align: center;
+	}
+
+	footer .logo-footer {
+	    width: 50%;
+	}
+
+	footer .redes {
+	    justify-content: center;
+	}
+
+	.container
+	{
+		width: 100%;
+	}
+
+	.columna-mobile-100
+	{
+		width: 100%;
+	}
+
+	.columna-mobile-50
+	{
+		width: 50%;
+	}
+
+	.empujar-mobile-0
+	{
+		margin-left: 0;
+	}
+
+	.sinpadding-mobile
+	{
+		padding: 0;
+	}
+
+	#inicio
+	{
+		height: 100vh;
+	}
+
+	#inicio img
+	{
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	#servicios .bloque-servicio {
+	    margin-bottom: 15px;
+	}
+
+	#contactenos {
+	    padding: 0	
+	}
+
+	#contactenos iframe 
+	{
+		position: relative;
+		height: 50vh;
+	}
+}
